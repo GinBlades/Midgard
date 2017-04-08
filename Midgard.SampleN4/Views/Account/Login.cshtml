@@ -1,0 +1,26 @@
+﻿@model Midgard.UtilitiesN4.Models.FormObjects.LoginFormObject
+
+@using (Html.BeginForm("Login", "Account", null, FormMethod.Post, new { role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.UsernameOrEmail, new { @class = "control-label" })
+        @Html.TextBoxFor(m => m.UsernameOrEmail, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.UsernameOrEmail, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <div class="checkbox">
+            @Html.CheckBoxFor(m => m.RememberMe)
+            @Html.LabelFor(m => m.RememberMe)
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Log in" class="btn btn-default" />
+    </div>
+}
