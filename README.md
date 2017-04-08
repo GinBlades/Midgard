@@ -204,3 +204,4 @@ Some view samples:
 
 * Wrap Startup configuration
 * Add 3rd party authentication
+* Make .NET Framework version

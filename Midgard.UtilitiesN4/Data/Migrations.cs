@@ -1,12 +1,12 @@
-﻿using Midgard.Utilities.Models;
+﻿using Midgard.UtilitiesN4.Models;
 using ServiceStack.Data;
 using ServiceStack.OrmLite;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using Midgard.Utilities.Services;
+using Midgard.UtilitiesN4.Services;
 
-namespace Midgard.Utilities.Data
+namespace Midgard.UtilitiesN4.Data
 {
     public class Migrations
     {
@@ -53,7 +53,7 @@ namespace Midgard.Utilities.Data
             {
                 Email = "test@example.com",
                 UserName = "test",
-                Password = IdentityBasedHasher.HashPassword("secret").ToHashString(),
+                Password = IdentityBasedHasher.HashPassword("secret"),
                 UserClaims = new List<UserClaim>
                     {
                         new UserClaim
